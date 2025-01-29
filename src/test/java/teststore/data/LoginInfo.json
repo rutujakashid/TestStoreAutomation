@@ -1,0 +1,44 @@
+[
+	{
+		"email": "raavi@gmail.com",
+		"password": "Raavi@123",
+		"isValid": "True"
+		
+		
+	},
+	{
+		"email": "riya2025@gmail.com",
+		"password": "Riya@123",
+		"isValid": "False"
+	
+	},
+	{
+			"email": "raavi@gmail.com",
+			"password": "Riya@123",
+			"isValid": "False"
+			
+	},
+	{
+			"email": "riya2025@gmail.com",
+			"password": "Raavi@123",
+			"isValid": "False"
+			
+	},
+	{
+			"email": " ",
+			"password": "Riya@123",
+			"isValid": "False"
+			
+	},
+	{
+		"email": " ",
+		"password": " ",
+		"isValid": "False"
+	},
+	{
+		"email": "raavi@gmail.com",
+		"password": " ",
+		"isValid": "False"
+	}
+	
+]
