@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="teststore.pagetests.LoginPageTest">
+      <class name="teststore.pagetests.PlaceOrderTest">
         <methods>
           <include name="launchApplication"/>
           <include name="tearDownApplication"/>
-          <include name="login" invocation-numbers="4 5 6 7"/>
+          <include name="submitOrder"/>
         </methods>
-      </class> <!-- teststore.pagetests.LoginPageTest -->
+      </class> <!-- teststore.pagetests.PlaceOrderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

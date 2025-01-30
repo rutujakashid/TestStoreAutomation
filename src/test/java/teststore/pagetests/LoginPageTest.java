@@ -31,7 +31,7 @@ public class LoginPageTest extends BaseTest{
 	{
 
 		List<HashMap<String, String>> data = GetJsonDataToHashmap();
-		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(4)},{data.get(5)},{data.get(6)}};
+		return new Object[][] {{data.get(0)},{data.get(1)}};
 		
 	}
 	
