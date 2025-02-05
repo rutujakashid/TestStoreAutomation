@@ -113,12 +113,12 @@ public class BaseTest
 		return homepage;
 		
 	}
-	
+	/*
 	@AfterMethod(alwaysRun=true)
 	public void tearDownApplication()
 	{
 		driver.close();
 	}
-	
+	*/
 	
 }

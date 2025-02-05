@@ -6,7 +6,6 @@
       <class name="teststore.pagetests.PlaceOrderTest">
         <methods>
           <include name="launchApplication"/>
-          <include name="tearDownApplication"/>
           <include name="submitOrder"/>
         </methods>
       </class> <!-- teststore.pagetests.PlaceOrderTest -->

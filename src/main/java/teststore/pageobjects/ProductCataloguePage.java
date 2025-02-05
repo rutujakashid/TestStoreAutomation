@@ -37,11 +37,13 @@ public class ProductCataloguePage extends AbstractComponents{
 		return products;
 	}
 	//This method will return the product selected by user
-	public void selectProduct(String productName)
+	public ProductPage selectProduct(String productName)
 	{
-		WebElement product = getAllProducts().stream().filter(prod -> prod.findElement(By.cssSelector(".col-xl-3")).getText()
+		WebElement product = getAllProducts().stream().filter(prod -> prod.findElement(By.cssSelector("h3.product-title")).getText()
 				          .equals(productName)).findFirst().orElse(null);
 		product.click();
+		ProductPage productpage = new ProductPage(driver);
+		return productpage;
 	}
 	
 	

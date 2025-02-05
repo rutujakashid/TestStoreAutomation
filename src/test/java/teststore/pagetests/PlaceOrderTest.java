@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import teststore.basetest.BaseTest;
+import teststore.pageobjects.CartPage;
+import teststore.pageobjects.DetailsPage;
+import teststore.pageobjects.OrderConfirmationPage;
 import teststore.pageobjects.ProductCataloguePage;
+import teststore.pageobjects.ProductPage;
 import teststore.pageobjects.SignInPage;
 
 public class PlaceOrderTest extends BaseTest {
@@ -22,7 +26,15 @@ public class PlaceOrderTest extends BaseTest {
 		String s = allproducts.get(i).getText();
 		System.out.println(s);
 	}
-	productcatalogue.selectProduct("The Best Is Yet To Come'...");
+	ProductPage productpage = productcatalogue.selectProduct("The Best Is Yet To Come'...");
+	productpage.inputDimension("60x90cm");
+	CartPage cartpage = productpage.addToCart();
+	DetailsPage detailspage = cartpage.finalCheckout();
+	detailspage.addAdressDetails();
+	detailspage.addShippingMethod();
+	OrderConfirmationPage confirmationpage = detailspage.selectPaymentOption();
+	confirmationpage.DisplayOrderConfirmationMsg();
+	
 	}
 
 }
