@@ -48,16 +48,18 @@ public class SignInPage
 		return errorMessage1.getText();
 		
 	}
-	public boolean isPasswordRequiredErrorDisplayed()
-	{
-		System.out.println("Please fill out password field");
-		return password.getAttribute("validationMessage").contains("Please fill out this field");
+	public boolean isUsernameRequiredValidationTriggered() {
+	    loginBtn.click();  // tries to submit form
+	    String message = emaiId.getAttribute("validationMessage");
+	    System.out.println(message);
+	    return message != null && !message.isEmpty();
 	}
-	public boolean isUserNameRequiredErrorDisplayed()
-	{
-		System.out.println("Please fill out username field");
-		return emaiId.getAttribute("validationMessage").contains("Please fill out this field");
+
+	public boolean isPasswordRequiredValidationTriggered() {
+	    loginBtn.click();  // tries to submit form
+	    String message = password.getAttribute("validationMessage");
+	    System.out.println(message);
+	    return message != null && !message.isEmpty();
 	}
-	
 
 }

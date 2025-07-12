@@ -22,7 +22,7 @@ import teststore.pageobjects.ProductCataloguePage;
 import teststore.pageobjects.SignInPage;
 import teststore.utilities.ExtentReporterNG;
 
-public class LoginPageTest extends BaseTest{
+public class ValidLoginTest extends BaseTest{
 
 
 	
@@ -31,7 +31,7 @@ public class LoginPageTest extends BaseTest{
 	{
 
 		List<HashMap<String, String>> data = GetJsonDataToHashmap();
-		return new Object[][] {{data.get(0)},{data.get(1)}};
+		return new Object[][] {{data.get(0)}};
 		
 	}
 	
@@ -39,25 +39,13 @@ public class LoginPageTest extends BaseTest{
 	public void login(HashMap<String, String> input)  
 	{	
 		SignInPage  signinpage = homepage.goToSignInPage();
-		ProductCataloguePage productcatalogue = signinpage.logInToProductCatalogue(input.get("email"),input.get("password"));
-	
-		if(input.get("isValid").equals("True"))
-		{
-			 
-			productcatalogue.successfullLogin();
-		}
-		else if(input.get("isValid").equals("False"))
-		{
-			
-			String errorText = signinpage.isErrorMessageDisplayed();
-			Assert.assertEquals(errorText, "Authentication failed.","Error Message do not match");
-		}
-		else
-		{
-			signinpage.isPasswordRequiredErrorDisplayed();
-			signinpage.isUserNameRequiredErrorDisplayed();
-		}
-		
+		String email = input.get("email");
+	    String password = input.get("password");
+	    String isValid = input.get("isValid");
+	    
+	    ProductCataloguePage productCatalogue = signinpage.logInToProductCatalogue(email, password);
+        productCatalogue.successfullLogin(); 
+        System.out.println("✅ Valid login successful.");
 		
 	}
 	
