@@ -95,7 +95,7 @@ public class BaseTest
 		    }
 		TakesScreenshot ss= (TakesScreenshot) driver;
 		File source = ss.getScreenshotAs(OutputType.FILE);
-		File file = new File(System.getProperty("user.dir") + "//AutomationTest//" + testcaseName + ".png");
+		File file = new File(System.getProperty("user.dir") + "//Results//" + testcaseName + ".png");
 		FileUtils.copyFile(source, file);
 		//return System.getProperty("user.dir" + "//AutomationTest//" + testcaseName + ".png");
 		return file.getPath();
@@ -113,12 +113,12 @@ public class BaseTest
 		return homepage;
 		
 	}
-	/*
+	
 	@AfterMethod(alwaysRun=true)
 	public void tearDownApplication()
 	{
 		driver.close();
 	}
-	*/
+	
 	
 }

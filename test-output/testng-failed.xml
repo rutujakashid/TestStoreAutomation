@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="teststore.pagetests.PlaceOrderTest">
+      <class name="teststore.pagetests.OrderHistoryTest">
         <methods>
           <include name="launchApplication"/>
-          <include name="submitOrder"/>
+          <include name="OrderHistory"/>
+          <include name="tearDownApplication"/>
         </methods>
-      </class> <!-- teststore.pagetests.PlaceOrderTest -->
+      </class> <!-- teststore.pagetests.OrderHistoryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

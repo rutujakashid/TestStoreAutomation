@@ -25,6 +25,9 @@ public class ProductCataloguePage extends AbstractComponents{
 	@FindBy(css=".col-xl-3")
 	List<WebElement> products;
 	
+	@FindBy(css=".account")
+	WebElement CustomerAccountPageLink;
+	
 	By productsBy = By.cssSelector(".col-xl-3");
 	public void successfullLogin()
 	{
@@ -44,6 +47,14 @@ public class ProductCataloguePage extends AbstractComponents{
 		product.click();
 		ProductPage productpage = new ProductPage(driver);
 		return productpage;
+	}
+	
+	public MyAccountPage gotoViewMyCustomerAccountPage()
+	{
+		CustomerAccountPageLink.click();	
+		MyAccountPage accountPage = new MyAccountPage(driver);
+		return accountPage;
+		
 	}
 	
 	
