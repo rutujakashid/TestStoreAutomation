@@ -19,10 +19,13 @@ public class MyAccountPage extends AbstractComponents{
 	WebElement Order_History_And_DetailsLink;
 	
 	
-	public void goToOrserHistoryPage()
+	public OrderHistoryPage goToOrserHistoryPage()
 	{
 		Order_History_And_DetailsLink.click();
+		OrderHistoryPage orderhistorypage = new OrderHistoryPage(driver);
+		return orderhistorypage;
 	}
-
+	
+	
 }
 
