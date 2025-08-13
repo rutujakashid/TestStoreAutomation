@@ -17,7 +17,8 @@ public class OrderHistoryTest extends BaseTest {
 	productcatalogue.successfullLogin();
 	MyAccountPage accountPage= productcatalogue.gotoViewMyCustomerAccountPage();
 	OrderHistoryPage orderhistorypage = accountPage.goToOrserHistoryPage();
-	orderhistorypage.locatingWebTable();
+	//orderhistorypage.locatingWebTable();
+	orderhistorypage.linkInTable();
 	
 	
 }

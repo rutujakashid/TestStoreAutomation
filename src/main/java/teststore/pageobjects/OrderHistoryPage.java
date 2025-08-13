@@ -24,9 +24,11 @@ public class OrderHistoryPage{
 	@FindBy(xpath="//table/thead/tr/th")
 	List<WebElement> columns;
 	
+	
 	//locate a table on a web page
 	public void locatingWebTable()
 	{
+		
 		int rowCount = rows.size();
 		int columnCount = columns.size();
 		System.out.println("Number of rows/coulmns present" + rowCount + "/" + columnCount);
@@ -35,6 +37,7 @@ public class OrderHistoryPage{
 		for(int i=0; i<rowCount ;i++)
 		{
 			List<WebElement> currentRow = rows.get(i).findElements(By.tagName("td"));
+			WebElement headerR = rows.get(i).findElement(By.tagName("th"));
 			
 			
 			for(int j=0;j<currentRow.size();j++)
@@ -53,6 +56,41 @@ public class OrderHistoryPage{
 		}
 		
 		
+	}
+	
+	public void linkInTable()
+	{
+		int rowCount = rows.size();
+		int columnCount = columns.size();
+		for (int i = 0; i < rowCount; i++) {
+	        // Get the row header (th tag in the row)
+	        WebElement headerR = rows.get(i).findElement(By.tagName("th"));
+	        String headerText = headerR.getText().trim();
+
+	        if (headerText.equals("GZSUTTWRQ")) {
+	            System.out.println("Found row header: " + headerText);
+
+	            // Get all columns (td) of the current row
+	            List<WebElement> currentRow = rows.get(i).findElements(By.tagName("td"));
+
+	            // Click link in column 6 (index 5)
+	            WebElement link = currentRow.get(5).findElement(By.tagName("a"));
+
+	            // Optional: Wait for 3 seconds before clicking
+	            try {
+	                Thread.sleep(5000);
+	            } catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
+	   
+	            link.click();
+	            System.out.println("Clicked link in column 6 of the matching row.");
+	            break; // Exit loop once the link is clicked
+	        }
+		
+		
+		
+	}
 	}
 
 }

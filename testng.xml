@@ -7,7 +7,7 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="teststore.pagetests.LoginPageTest"/>
+      <class name="teststore.pagetests.PlaceOrderTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
